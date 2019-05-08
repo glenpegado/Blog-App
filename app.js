@@ -29,7 +29,6 @@ Blog.create({
 });
 
 
-
 // RESTFUL ROUTES
 app.get( '/blogs', ( req, res ) => {
     res.render( 'index' )
