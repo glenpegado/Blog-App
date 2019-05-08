@@ -29,10 +29,12 @@ Blog.create({
 });
 
 
-// RESTFUL ROUTES
+/// RESTFUL ROUTES
 app.get( '/blogs', ( req, res ) => {
     res.render( 'index' )
 } )
+
+
 
 
 app.listen(process.env.PORT, process.env.IP, () =>{
