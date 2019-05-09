@@ -22,14 +22,13 @@ let blogSchema = new mongoose.Schema({
 })
 let Blog = mongoose.model( 'Blog', blogSchema )
 
-Blog.create({
-    title: 'test Blog',
-    image: 'https://images.unsplash.com/photo-1556229010-aa3f7ff66b24?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80',
-    body: 'This is a blog post'
-});
 
 
 /// RESTFUL ROUTES
+app.get( '/', ( req, res ) => {
+    res.redirect( '/blogs' )
+} )
+
 app.get( '/blogs', ( req, res ) => {
     res.render( 'index' )
 } )
@@ -37,6 +36,6 @@ app.get( '/blogs', ( req, res ) => {
 
 
 
-app.listen(process.env.PORT, process.env.IP, () =>{
+app.listen(process.env.PORT, process.env.IP, () => {
     console.log('SERVER IS RUNNING!')
 })
